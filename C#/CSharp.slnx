@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="Calculator/Calculator.csproj" />
   <Project Path="Hangman/Hangman.csproj" Id="aa6a5c63-80c7-4f94-aacc-1b1cea0a5d3c" />
+  <Project Path="Translator/Translator.csproj" Id="db930d95-0090-4ec4-8772-46546c78c116" />
 </Solution>
