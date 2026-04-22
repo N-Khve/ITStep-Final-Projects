@@ -73,6 +73,10 @@ namespace Translator
                 {
                     Console.WriteLine($"Access denied: {ex.Message}");
                 }
+                catch (ArgumentException ex)
+                {
+                    Console.WriteLine($"Input error: {ex.Message}");
+                }
                 catch (Exception ex)
                 {
                     Console.WriteLine($"Unexpected error: {ex.Message}");
@@ -101,7 +105,7 @@ namespace Translator
                 "4" => @"../../../Ru-Es.txt",
                 "5" => @"../../../Es-En.txt",
                 "6" => @"../../../Es-Ru.txt",
-                _ => @"../../../En-Ru.txt"
+                _ => throw new ArgumentException("Invalid language pair selection.")
             };
         }
 
