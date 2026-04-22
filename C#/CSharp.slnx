@@ -1,4 +1,10 @@
 <Solution>
+  <Folder Name="/BookManager/">
+    <Project Path="BookManager.Data/BookManager.Data.csproj" Id="c8fd9b4c-1ea7-43ff-918a-0b73317ea806" />
+    <Project Path="BookManager.FormsUI/BookManager.UI.csproj" Id="da996071-3e8f-4647-ab0a-be543296478b" />
+    <Project Path="BookManager.Repository/BookManager.Repository.csproj" Id="78b3098c-8a79-4a7d-b219-53934492a105" />
+    <Project Path="BookManager.Service/BookManager.Service.csproj" Id="b9004499-c4d0-40a8-8ae0-1bd9ec2da8bd" />
+  </Folder>
   <Project Path="Calculator/Calculator.csproj" />
   <Project Path="Hangman/Hangman.csproj" Id="aa6a5c63-80c7-4f94-aacc-1b1cea0a5d3c" />
   <Project Path="Translator/Translator.csproj" Id="db930d95-0090-4ec4-8772-46546c78c116" />
