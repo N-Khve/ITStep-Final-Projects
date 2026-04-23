@@ -49,7 +49,7 @@ namespace BookManager.Repository
             {
                 lock (_lock)
                 {
-                    if (_books.Any(b => b.Id != id))
+                    if (!_books.Any(b => b.Id == id))
                         throw new BookNotFoundException(id);
 
                     return _books.FirstOrDefault(b => b.Id == id);
@@ -70,7 +70,7 @@ namespace BookManager.Repository
                 bool isDupe = _books.Any(b => bookComparer.Equals(b, newBook));
 
                 if (isDupe)
-                    throw new DuplicateBookException(newBook.Title, newBook.Author, newBook.Publicationyear);
+                    throw new DuplicateBookException(newBook.Title, newBook.Author, newBook.PublicationYear);
 
                 newBook.Id = _books.Any() ? _books.Max(b => b.Id) + 1 : 1;
                 _books.Add(newBook);

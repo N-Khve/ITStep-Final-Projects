@@ -12,7 +12,7 @@ namespace BookManager.Repository.Models.Comparers
 
             return string.Equals(x.Title, y.Title, StringComparison.OrdinalIgnoreCase) &&
                    string.Equals(x.Author, y.Author, StringComparison.OrdinalIgnoreCase) &&
-                   x.Publicationyear == y.Publicationyear;
+                   x.PublicationYear == y.PublicationYear;
         }
 
         public int GetHashCode([DisallowNull] Book obj)
@@ -22,7 +22,7 @@ namespace BookManager.Repository.Models.Comparers
             return HashCode.Combine(
                 obj.Title?.ToLowerInvariant(),
                 obj.Author?.ToLowerInvariant(),
-                obj.Publicationyear);
+                obj.PublicationYear);
         }
     }
 }

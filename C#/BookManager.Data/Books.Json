@@ -3,66 +3,66 @@
     "Id": 1,
     "Title": "Pride and Prejudice",
     "Author": "Jane Austen",
-    "PublicationDate": "1813-01-28"
+    "PublicationYear": "1813"
   },
   {
     "Id": 2,
     "Title": "Moby-Dick",
     "Author": "Herman Melville",
-    "PublicationDate": "1851-10-18"
+    "PublicationYear": "1851"
   },
   {
     "Id": 3,
     "Title": "Frankenstein",
     "Author": "Mary Shelley",
-    "PublicationDate": "1818-01-01"
+    "PublicationYear": "1818"
   },
   {
     "Id": 4,
     "Title": "The Great Gatsby",
     "Author": "F. Scott Fitzgerald",
-    "PublicationDate": "1925-04-10"
+    "PublicationYear": "1925"
   },
   {
     "Id": 5,
     "Title": "The Hobbit",
     "Author": "J.R.R. Tolkien",
-    "PublicationDate": "1937-09-21"
+    "PublicationYear": "1937"
   },
   {
     "Id": 6,
     "Title": "1984",
     "Author": "George Orwell",
-    "PublicationDate": "1949-06-08"
+    "PublicationYear": "1949"
   },
   {
     "Id": 7,
     "Title": "The Catcher in the Rye",
     "Author": "J.D. Salinger",
-    "PublicationDate": "1951-07-16"
+    "PublicationYear": "1951"
   },
   {
     "Id": 8,
     "Title": "The Lord of the Rings: The Fellowship of the Ring",
     "Author": "J.R.R. Tolkien",
-    "PublicationDate": "1954-07-29"
+    "PublicationYear": "1954"
   },
   {
     "Id": 9,
     "Title": "To Kill a Mockingbird",
     "Author": "Harper Lee",
-    "PublicationDate": "1960-07-11"
+    "PublicationYear": "1960"
   },
   {
     "Id": 10,
     "Title": "Harry Potter and the Philosopher\u0027s Stone",
     "Author": "J.K. Rowling",
-    "PublicationDate": "1997-06-26"
+    "PublicationYear": "1997"
   },
   {
     "Id": 11,
     "Title": "Test Book",
     "Author": "Test Author",
-    "PublicationDate": "2024-02-01"
+    "PublicationYear": "2024"
   }
 ]

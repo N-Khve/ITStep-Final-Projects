@@ -50,16 +50,13 @@ namespace BookManager.Repository.Models
             }
         }
 
-        public string Publicationyear
+        public string PublicationYear
         {
             get => _publicationYear;
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
                     throw new InvalidBookFormatException("publication year cannot be null or empty.");
-
-                if (!value.All(char.IsDigit))
-                    throw new InvalidBookFormatException("Publication year must contain only digits.");
 
                 _publicationYear = value;
             }

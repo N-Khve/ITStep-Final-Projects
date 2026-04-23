@@ -26,7 +26,7 @@ namespace BookManager.Service
                     Id = b.Id,
                     Title = b.Title,
                     Author = b.Author,
-                    PublicationDate = b.Publicationyear
+                    PublicationYear = b.PublicationYear
                 }).ToList();
             }
             catch (Exception)
@@ -46,7 +46,7 @@ namespace BookManager.Service
                     Id = book.Id,
                     Title = book.Title,
                     Author = book.Author,
-                    PublicationDate = book.Publicationyear
+                    PublicationYear = book.PublicationYear
                 };
             }
             catch (Exception)
@@ -61,7 +61,7 @@ namespace BookManager.Service
             {
                 Title = model.Title,
                 Author = model.Author,
-                Publicationyear = model.PublicationDate
+                PublicationYear = model.PublicationYear
             };
 
             try
