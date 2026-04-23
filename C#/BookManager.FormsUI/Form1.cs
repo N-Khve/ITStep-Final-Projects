@@ -1,4 +1,6 @@
+using BookManager.Service.Dto_s;
 using BookManager.Service.Interfaces;
+using BookManager.UI;
 
 namespace BookManager.FormsUI
 {
@@ -30,15 +32,19 @@ namespace BookManager.FormsUI
 
         private void AddBookBtn_Click(object sender, EventArgs e)
         {
+            Form2 addBookform = new Form2(_bookService, bindingSource);
+            addBookform.ShowDialog();
         }
 
-        private void SearchBox_TextChanged(object sender, EventArgs e)
+        private void SearchBtn_Click(object sender, EventArgs e)
         {
             string filterText = SearchBox.Text.Trim().ToLower();
 
             bindingSource.Filter = string.IsNullOrEmpty(filterText)
             ? null
             : $"Title LIKE '*{filterText}*'";
+
+            BooksGrid.DataSource = bindingSource;
         }
     }
 }

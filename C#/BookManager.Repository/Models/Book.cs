@@ -1,4 +1,5 @@
 ﻿using BookManager.Repository.Exceptions;
+using System.ComponentModel.DataAnnotations;
 
 namespace BookManager.Repository.Models
 {
@@ -57,6 +58,9 @@ namespace BookManager.Repository.Models
             {
                 if (string.IsNullOrWhiteSpace(value))
                     throw new InvalidBookFormatException("publication year cannot be null or empty.");
+
+                if (int.Parse(value) > DateTime.Now.Year)
+                    throw new InvalidBookFormatException("Publication year cannot be in the future.");
 
                 _publicationYear = value;
             }

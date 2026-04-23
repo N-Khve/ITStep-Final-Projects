@@ -33,6 +33,7 @@
             BooksGrid = new DataGridView();
             AddBookBtn = new Button();
             SearchBox = new TextBox();
+            SearchBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)bindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BooksGrid).BeginInit();
             SuspendLayout();
@@ -70,16 +71,26 @@
             SearchBox.ForeColor = SystemColors.MenuText;
             SearchBox.Location = new Point(12, 13);
             SearchBox.Name = "SearchBox";
+            SearchBox.PlaceholderText = "Search by title";
             SearchBox.Size = new Size(278, 23);
             SearchBox.TabIndex = 2;
-            SearchBox.TextChanged += SearchBox_TextChanged;
-            SearchBox.PlaceholderText = "Search by title";
+            // 
+            // SearchBtn
+            // 
+            SearchBtn.Location = new Point(296, 13);
+            SearchBtn.Name = "SearchBtn";
+            SearchBtn.Size = new Size(75, 23);
+            SearchBtn.TabIndex = 3;
+            SearchBtn.Text = "Search";
+            SearchBtn.UseVisualStyleBackColor = true;
+            SearchBtn.Click += SearchBtn_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(785, 450);
+            Controls.Add(SearchBtn);
             Controls.Add(SearchBox);
             Controls.Add(AddBookBtn);
             Controls.Add(BooksGrid);
@@ -98,5 +109,6 @@
         private DataGridView BooksGrid;
         private Button AddBookBtn;
         private TextBox SearchBox;
+        private Button SearchBtn;
     }
 }

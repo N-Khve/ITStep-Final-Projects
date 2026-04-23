@@ -2,6 +2,7 @@ using BookManager.Repository;
 using BookManager.Repository.Interfaces;
 using BookManager.Service;
 using BookManager.Service.Interfaces;
+using BookManager.UI;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BookManager.FormsUI
@@ -37,6 +38,7 @@ namespace BookManager.FormsUI
             services.AddTransient<IBookService, BookService>();
 
             services.AddTransient<Form1>();
+            services.AddTransient<Form2>();
         }
     }
 }
