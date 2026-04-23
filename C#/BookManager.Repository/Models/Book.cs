@@ -1,11 +1,16 @@
-﻿namespace BookManager.Repository.Models
+﻿using BookManager.Repository.Exceptions;
+
+namespace BookManager.Repository.Models
 {
     public class Book
     {
-        private int _id { get; set; }
-        private string _title { get; set; }
-        private string _author { get; set; }
-        private DateOnly _publicationDate { get; set; }
+        private int _id;
+
+        private string _title;
+
+        private string _author;
+
+        private DateOnly _publicationDate;
 
         public int Id
         {
@@ -24,10 +29,7 @@
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("Book title cannot be null or empty.", nameof(Title));
-
-                if (value.All(char.IsDigit))
-                    throw new ArgumentException("Book title cannot contain only digits.", nameof(Title));
+                    throw new InvalidBookFormatException("Book title cannot be null or empty.");
 
                 _title = value;
             }
@@ -39,10 +41,10 @@
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("Book author cannot be null or empty.", nameof(Author));
+                    throw new InvalidBookFormatException("Book author cannot be null or empty.");
 
                 if (value.All(char.IsDigit))
-                    throw new ArgumentException("Book author cannot contain only digits.", nameof(Author));
+                    throw new InvalidBookFormatException("Book author cannot contain only digits.");
 
                 _author = value;
             }
@@ -54,7 +56,7 @@
             set
             {
                 if (value > DateOnly.FromDateTime(DateTime.Now))
-                    throw new ArgumentException("Publication date cannot be in the future.", nameof(PublicationDate));
+                    throw new InvalidBookFormatException("Publication date cannot be in the future.");
 
                 _publicationDate = value;
             }

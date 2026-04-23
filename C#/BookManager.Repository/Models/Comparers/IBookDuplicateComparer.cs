@@ -1,9 +1,9 @@
 ﻿using BookManager.Repository.Models;
 using System.Diagnostics.CodeAnalysis;
 
-namespace BookManager.Repository.Comparers
+namespace BookManager.Repository.Models.Comparers
 {
-    internal class BookDuplicateComparer : IEqualityComparer<Book>
+    public class IBookDuplicateComparer : IEqualityComparer<Book>
     {
         public bool Equals(Book? x, Book? y)
         {
