@@ -29,11 +29,40 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            bindingSource = new BindingSource(components);
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)bindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.DataSource = bindingSource;
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(0, 0);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(785, 450);
+            dataGridView1.TabIndex = 0;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(785, 450);
+            Controls.Add(dataGridView1);
+            Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)bindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private BindingSource bindingSource;
+        private DataGridView dataGridView1;
     }
 }

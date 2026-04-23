@@ -10,6 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BookManager.Data\BookManager.Data.csproj" />
     <ProjectReference Include="..\BookManager.Repository\BookManager.Repository.csproj" />
+    <ProjectReference Include="..\BookManager.Service\BookManager.Service.csproj" />
   </ItemGroup>
 
 </Project>

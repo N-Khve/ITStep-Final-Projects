@@ -2,7 +2,6 @@
 using BookManager.Repository.Interfaces;
 using BookManager.Repository.Models;
 using BookManager.Repository.Models.Comparers;
-using System.Security.Principal;
 using System.Text;
 using System.Text.Json;
 
@@ -36,7 +35,7 @@ namespace BookManager.Repository
             return new BookRepository(filePath, books);
         }
 
-        public async Task<List<Book>> GetAllBooks()
+        public async Task<List<Book>> GetAllBooksAsync()
         {
             lock (_lock)
             {
@@ -44,7 +43,7 @@ namespace BookManager.Repository
             }
         }
 
-        public async Task<Book> GetBookById(int id)
+        public async Task<Book> GetBookByIdAsync(int id)
         {
             try
             {
@@ -62,7 +61,7 @@ namespace BookManager.Repository
             }
         }
 
-        public async Task<int> AddBook(Book newBook)
+        public async Task<int> AddBookAsync(Book newBook)
         {
             var bookComparer = new IBookDuplicateComparer();
 
@@ -71,12 +70,21 @@ namespace BookManager.Repository
                 bool isDupe = _books.Any(b => bookComparer.Equals(b, newBook));
 
                 if (isDupe)
-                    throw new DuplicateBookException(newBook.Title, newBook.Author, newBook.PublicationDate);
+                    throw new DuplicateBookException(newBook.Title, newBook.Author, newBook.Publicationyear);
 
                 newBook.Id = _books.Any() ? _books.Max(b => b.Id) + 1 : 1;
                 _books.Add(newBook);
             }
-            await SaveBooksAsync();
+
+            try
+            {
+                await SaveBooksAsync();
+            }
+            catch (Exception ex)
+            {
+                throw new BookManagerException("failed to add book", ex);
+            }
+
             return newBook.Id;
         }
 

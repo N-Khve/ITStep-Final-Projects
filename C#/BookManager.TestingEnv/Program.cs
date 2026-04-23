@@ -1,5 +1,6 @@
 ﻿using BookManager.Repository;
-using BookManager.Repository.Models;
+using BookManager.Service;
+using BookManager.Service.Dto_s;
 
 namespace BookManager.TestingEnv
 {
@@ -7,13 +8,15 @@ namespace BookManager.TestingEnv
     {
         private static async Task Main(string[] args)
         {
-            var repo = await BookRepository.CreateAsync(@"../../../../BookManager.Data/Books.json");
+            //var repo = await BookRepository.CreateAsync(@"../../../../BookManager.Data/Books.json");
 
-            var result = await repo.AddBook(new Book
+            var service = new BookService(await BookRepository.CreateAsync(@"../../../../BookManager.Data/Books.json"));
+
+            var result = await service.AddBookAsync(new CreateBookDto
             {
                 Title = "Test Book",
                 Author = "Test Author",
-                PublicationDate = new DateOnly(2024, 2, 1)
+                PublicationDate = DateOnly.FromDateTime(DateTime.Now).ToString()
             });
         }
     }

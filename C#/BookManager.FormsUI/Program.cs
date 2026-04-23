@@ -1,17 +1,42 @@
+using BookManager.Repository;
+using BookManager.Repository.Interfaces;
+using BookManager.Service;
+using BookManager.Service.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
+
 namespace BookManager.FormsUI
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
+        public static IServiceProvider ServiceProvider { get; private set; }
+
         [STAThread]
-        static void Main()
+        private static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            var services = new ServiceCollection();
+            ConfigureServices(services);
+            ServiceProvider = services.BuildServiceProvider();
+
+            var mainForm = ServiceProvider.GetRequiredService<Form1>();
+
+            Application.Run(mainForm);
+        }
+
+        private static void ConfigureServices(IServiceCollection services)
+        {
+            const string filePath = @"../../../../BookManager.Data/books.json";
+
+            services.AddSingleton<IBookRepository>(options =>
+            {
+                return BookRepository.CreateAsync(filePath)
+                .GetAwaiter()
+                .GetResult();
+            });
+
+            services.AddTransient<IBookService, BookService>();
+
+            services.AddTransient<Form1>();
         }
     }
 }

@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Dto%27s\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\BookManager.Data\BookManager.Data.csproj" />
     <ProjectReference Include="..\BookManager.Repository\BookManager.Repository.csproj" />
   </ItemGroup>

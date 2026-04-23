@@ -4,9 +4,9 @@
     {
         private string Title { get; }
         private string Author { get; }
-        private DateOnly PublicationDate { get; }
+        private string PublicationDate { get; }
 
-        public DuplicateBookException(string title, string author, DateOnly publicationDate)
+        public DuplicateBookException(string title, string author, string publicationDate)
             : base($"Duplicate book: {title} by {author} ({publicationDate})")
         {
             Title = title;

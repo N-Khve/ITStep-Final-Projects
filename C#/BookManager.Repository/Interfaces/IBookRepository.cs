@@ -4,10 +4,10 @@ namespace BookManager.Repository.Interfaces
 {
     public interface IBookRepository
     {
-        Task<List<Book>> GetAllBooks();
+        Task<List<Book>> GetAllBooksAsync();
 
-        Task<Book> GetBookById(int id);
+        Task<Book> GetBookByIdAsync(int id);
 
-        Task<int> AddBook(Book newBook);
+        Task<int> AddBookAsync(Book newBook);
     }
 }

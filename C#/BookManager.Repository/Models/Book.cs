@@ -10,7 +10,7 @@ namespace BookManager.Repository.Models
 
         private string _author;
 
-        private DateOnly _publicationDate;
+        private string _publicationYear;
 
         public int Id
         {
@@ -50,15 +50,18 @@ namespace BookManager.Repository.Models
             }
         }
 
-        public DateOnly PublicationDate
+        public string Publicationyear
         {
-            get => _publicationDate;
+            get => _publicationYear;
             set
             {
-                if (value > DateOnly.FromDateTime(DateTime.Now))
-                    throw new InvalidBookFormatException("Publication date cannot be in the future.");
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new InvalidBookFormatException("publication year cannot be null or empty.");
 
-                _publicationDate = value;
+                if (!value.All(char.IsDigit))
+                    throw new InvalidBookFormatException("Publication year must contain only digits.");
+
+                _publicationYear = value;
             }
         }
     }
