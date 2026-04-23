@@ -10,8 +10,4 @@
     <ProjectReference Include="..\BookManager.Data\BookManager.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Exceptions\" />
-  </ItemGroup>
-
 </Project>
