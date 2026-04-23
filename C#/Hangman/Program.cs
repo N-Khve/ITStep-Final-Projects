@@ -37,7 +37,7 @@
                     Console.WriteLine("Game ended.");
                     return;
                 }
-
+                Console.Clear();
                 try
                 {
                     char guess = ValidateInput(input);
