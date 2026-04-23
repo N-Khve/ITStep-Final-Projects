@@ -32,7 +32,7 @@ namespace BookManager.FormsUI
 
         private void AddBookBtn_Click(object sender, EventArgs e)
         {
-            Form2 addBookform = new Form2(_bookService, bindingSource);
+            Form2 addBookform = new Form2(_bookService);
             addBookform.ShowDialog();
         }
 

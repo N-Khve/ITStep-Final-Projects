@@ -7,13 +7,10 @@ namespace BookManager.UI
     {
         private readonly IBookService _service;
 
-        private BindingSource _bindingSource;
-
-        public Form2(IBookService service, BindingSource bs)
+        public Form2(IBookService service)
         {
             InitializeComponent();
             _service = service;
-            _bindingSource = bs;
         }
 
         private async void AddBookBtn_Click(object sender, EventArgs e)
